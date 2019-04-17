@@ -6,12 +6,7 @@ Relies on the popular [HAR](http://www.softwareishard.com/blog/har-12-spec/#requ
 
 See it in action on companion service: [APIembed](https://apiembed.com/)
 
-[![Build Status][travis-image]][travis-url]
 [![Downloads][npm-downloads]][npm-url]
-[![Code Climate][codeclimate-quality]][codeclimate-url]
-[![Coverage Status][codeclimate-coverage]][codeclimate-url]
-[![Dependencies][david-image]][david-url]
-[![Gitter][gitter-image]][gitter-url]
 
 ## Install
 
@@ -171,9 +166,9 @@ Have a bug or a feature request? Please first read the [issue guidelines](CONTRI
 
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
 
-For a info on creating new conversion targets, please review this [guideline](https://github.com/Mashape/httpsnippet/wiki/Creating-Targets)
+For info on creating new conversion targets, please review this [guideline](https://github.com/Mashape/httpsnippet/wiki/Creating-Targets)
 
-More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests.
+Moreover, if your pull request contains JavaScript patches or features, you must include relevant unit tests.
 
 Editor preferences are available in the [editor config](.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
 
@@ -195,7 +190,7 @@ For more information on SemVer, please visit <http://semver.org/>.
 
 ## License
 
-[MIT](LICENSE) &copy; [Mashape](https://www.mashape.com)
+[MIT](LICENSE) &copy; [Kong](https://konghq.com)
 
 [license-url]: https://github.com/Mashape/httpsnippet/blob/master/LICENSE
 

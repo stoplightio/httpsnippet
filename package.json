@@ -1,5 +1,5 @@
 {
-  "version": "1.16.5",
+  "version": "1.16.7",
   "name": "httpsnippet",
   "description": "HTTP Request snippet generator for *most* languages",
   "author": "Ahmad Nassri <ahmad@mashape.com> (https://www.mashape.com/)",
@@ -68,14 +68,14 @@
     "standard": "10.0.x"
   },
   "dependencies": {
-    "chalk": "1.x.x",
-    "commander": "2.x.x",
-    "debug": "2.x.x",
-    "event-stream": "3.3.5",
-    "form-data": "2.3.x",
-    "fs-readfile-promise": "2.x.x",
-    "fs-writefile-promise": "1.x.x",
-    "har-validator": "5.x.x",
-    "pinkie-promise": "2.x.x"
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "debug": "^2.2.0",
+    "event-stream": "3.3.4",
+    "form-data": "^1.0.0-rc3",
+    "fs-readfile-promise": "^2.0.1",
+    "fs-writefile-promise": "^1.0.3",
+    "har-validator": "^5.0.0",
+    "pinkie-promise": "^2.0.0"
   }
 }

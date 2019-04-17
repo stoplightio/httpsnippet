@@ -38,43 +38,34 @@
   "engines": {
     "node": ">=0.10"
   },
-  "files": [
-    "bin",
-    "src"
-  ],
+  "files": ["bin", "src"],
   "repository": "Mashape/httpsnippet",
   "bugs": {
     "url": "https://github.com/Mashape/httpsnippet/issues"
   },
   "scripts": {
     "quick": "mocha --no-timeouts --fgrep 'Request Validation' --invert",
-    "pretest": "standard && echint",
     "test": "mocha --no-timeouts",
     "posttest": "npm run coverage",
-    "coverage": "istanbul cover --dir coverage _mocha -- --fgrep 'Request Validation' --invert -R dot",
+    "coverage":
+      "istanbul cover --dir coverage _mocha -- --fgrep 'Request Validation' --invert -R dot",
     "codeclimate": "codeclimate < coverage/lcov.info"
   },
   "standard": {
-    "ignore": [
-      "**/test/fixtures/**"
-    ]
+    "ignore": ["**/test/fixtures/**"]
   },
   "echint": {
-    "ignore": [
-      "coverage/**",
-      "CONTRIBUTING.md",
-      "test/fixtures/**"
-    ]
+    "ignore": ["coverage/**", "CONTRIBUTING.md", "test/fixtures/**"]
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "0.1.1",
-    "echint": "^3.0.0",
-    "glob": "^6.0.1",
-    "istanbul": "^0.4.0",
-    "mocha": "^2.3.4",
-    "require-directory": "^2.1.1",
-    "should": "^7.1.1",
-    "standard": "^10.0.2"
+    "codeclimate-test-reporter": "0.1.x",
+    "echint": "3.0.x",
+    "glob": "6.0.x",
+    "istanbul": "0.4.x",
+    "mocha": "2.3.x",
+    "require-directory": "2.1.x",
+    "should": "7.1.x",
+    "standard": "10.0.x"
   },
   "dependencies": {
     "chalk": "^1.1.1",

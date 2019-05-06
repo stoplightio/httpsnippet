@@ -46,7 +46,7 @@ var HTTPSnippet = function (data) {
           throw err
         }
 
-        self.requests.push(self.prepare(entry.request));
+        self.requests.push(self.prepare(entry.request))
       })
     } catch (e) {
       console.warn('Error validating har object.', e)
@@ -54,8 +54,8 @@ var HTTPSnippet = function (data) {
       // continue anyway
       self.requests.push(self.prepare(entry.request))
     }
-  });
-};
+  })
+}
 
 HTTPSnippet.prototype.prepare = function (request) {
   // construct utility properties
@@ -124,7 +124,7 @@ HTTPSnippet.prototype.prepare = function (request) {
 
         if (form.pipe) {
           form.pipe(
-            es.map(function(data, cb) {
+            es.map(function (data, cb) {
               request.postData.text += data
             })
           )

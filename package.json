@@ -38,20 +38,26 @@
   "engines": {
     "node": ">=4"
   },
-  "files": ["bin", "src"],
+  "files": [
+    "bin",
+    "src"
+  ],
   "repository": "Mashape/httpsnippet",
   "bugs": {
     "url": "https://github.com/Mashape/httpsnippet/issues"
   },
   "scripts": {
     "quick": "mocha --no-timeouts --fgrep 'Request Validation' --invert",
+    "pretest": "standard && echint",
     "test": "mocha --no-timeouts",
     "posttest": "exit 0 && npm run coverage",
     "coverage": "istanbul cover --dir coverage _mocha -- --fgrep 'Request Validation' --invert -R dot",
     "codeclimate": "codeclimate < coverage/lcov.info"
   },
   "standard": {
-    "ignore": ["**/test/fixtures/**"]
+    "ignore": [
+      "**/test/fixtures/**"
+    ]
   },
   "echint": {
     "ignore": [

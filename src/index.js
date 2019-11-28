@@ -40,13 +40,20 @@ var HTTPSnippet = function (data) {
     entry.request.headersSize = 0
     entry.request.postData.size = 0
 
-    validate.request(entry.request, function (err, valid) {
-      if (!valid) {
-        throw err
-      }
+    try {
+      validate.request(entry.request, function (err, valid) {
+        if (!valid) {
+          throw err
+        }
 
+        self.requests.push(self.prepare(entry.request))
+      })
+    } catch (e) {
+      console.warn('Error validating har object.', e)
+
+      // continue anyway
       self.requests.push(self.prepare(entry.request))
-    })
+    }
   })
 }
 
@@ -100,6 +107,7 @@ HTTPSnippet.prototype.prepare = function (request) {
       // reset values
       request.postData.text = ''
       request.postData.mimeType = 'multipart/form-data'
+      request.headersObj['content-type'] = 'multipart/form-data;'
 
       if (request.postData.params) {
         var form = new MultiPartForm()
@@ -114,12 +122,17 @@ HTTPSnippet.prototype.prepare = function (request) {
           })
         })
 
-        form.pipe(es.map(function (data, cb) {
-          request.postData.text += data
-        }))
+        if (form.pipe) {
+          form.pipe(es.map(function (data, cb) {
+            request.postData.text += data
+          }))
+        }
 
-        request.postData.boundary = form.getBoundary()
-        request.headersObj['content-type'] = 'multipart/form-data; boundary=' + form.getBoundary()
+        if (form.getBoundary) {
+          request.postData.boundary = form.getBoundary()
+        }
+
+        request.headersObj['content-type'] = 'multipart/form-data; boundary=' + (request.postData.boundary || '')
       }
       break
 

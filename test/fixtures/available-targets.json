@@ -217,7 +217,7 @@
     "key": "csharp",
     "title": "C#",
     "extname": ".cs",
-    "default": "restsharp",
+    "default": "httpclient",
     "clients": [
       {
         "key": "restsharp",

@@ -5,8 +5,9 @@ module.exports = {
     key: 'csharp',
     title: 'C#',
     extname: '.cs',
-    default: 'restsharp'
+    default: 'httpclient'
   },
 
-  restsharp: require('./restsharp')
+  restsharp: require('./restsharp'),
+  httpclient: require('./httpclient')
 }

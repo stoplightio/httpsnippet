@@ -122,7 +122,13 @@ module.exports = function (source, options) {
         code.push(1, '},')
         break
       default:
-        code.push(1, 'Content = new StringContent(%s, Encoding.UTF8, "%s")', JSON.stringify(source.postData.text || ''), contentType)
+        code.push(1, 'Content = new StringContent(%s)', JSON.stringify(source.postData.text || ''))
+        code.push(1, '{')
+        code.push(2, 'Headers =')
+        code.push(2, '{')
+        code.push(3, 'ContentType = new MediaTypeHeaderValue("%s")', contentType)
+        code.push(2, '}')
+        code.push(1, '}')
         break
     }
   }
@@ -133,6 +139,7 @@ module.exports = function (source, options) {
   code.push('{')
   code.push(1, 'response.EnsureSuccessStatusCode();')
   code.push(1, 'var body = await response.Content.ReadAsStringAsync();')
+  code.push(1, 'Console.WriteLine(body);')
   code.push('}')
 
   return code.join()
